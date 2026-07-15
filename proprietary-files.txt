@@ -21,8 +21,8 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # ADSP modules
-odm/lib/rfsa/adsp/libc++abi.so.1
 odm/lib/rfsa/adsp/libc++.so.1
+odm/lib/rfsa/adsp/libc++abi.so.1
 odm/lib/rfsa/adsp/libktvdrc.so
 odm/lib/rfsa/adsp/libktveffect.so
 odm/lib/rfsa/adsp/libktveq.so
@@ -30,15 +30,17 @@ odm/lib/rfsa/adsp/libktvns.so
 odm/lib/rfsa/adsp/libktvpitchshift.so
 odm/lib/rfsa/adsp/libktvreverb.so
 odm/lib/rfsa/adsp/libktvvolume.so
-vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDADV_Encoder.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Speech_Decoder.so
 vendor/lib/rfsa/adsp/capi_v2_dap_cpdp.so
+vendor/lib/rfsa/adsp/libBeautyShot_skel.so
+vendor/lib/rfsa/adsp/libSuperSensor_skel.so
+vendor/lib/rfsa/adsp/libVDHexagonBlurless_v2_skel.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarc_hta_driver_skel.so
 vendor/lib/rfsa/adsp/libarcnn_hvx_1_1_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
-vendor/lib/rfsa/adsp/libBeautyShot_skel.so
 vendor/lib/rfsa/adsp/libbitml_nsp_skel.so
 vendor/lib/rfsa/adsp/libcamera_nn_skel.so
 vendor/lib/rfsa/adsp/libcvpdsp_skel.so
@@ -58,8 +60,6 @@ vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so;MODULE_SUFFIX=_vendor
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
-vendor/lib/rfsa/adsp/libSuperSensor_skel.so
-vendor/lib/rfsa/adsp/libVDHexagonBlurless_v2_skel.so
 
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
@@ -71,9 +71,9 @@ vendor/lib/liba2dpoffload.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libbatterylistener.so
 vendor/lib/libcomprcapture.so
-vendor/lib/libhfp.so
 vendor/lib/libexthwplugin.so
 vendor/lib/libhdmiedid.so
+vendor/lib/libhfp.so
 vendor/lib/libsndmonitor.so
 vendor/lib/libspkrprot.so
 vendor/lib/libssrec.so
@@ -135,20 +135,20 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Camera
-my_product/lib64/libsingle_camera_bokeh_native.so:system_ext/lib64/libsingle_camera_bokeh_native.so
-my_product/lib64/libApsFaceBeautyPreviewProductJni.so:system_ext/lib64/libApsFaceBeautyPreviewProductJni.so;FIX_SONAME
 my_product/lib64/libAPSClient-cmd-jni.so:system_ext/lib64/libAPSClient-cmd-jni.so
+my_product/lib64/libAPSClient-jni.so:system_ext/lib64/libAPSClient-jni.so
+my_product/lib64/libAncHumanDoubleExposure-jni.so:system_ext/lib64/libAncHumanDoubleExposure-jni.so
+my_product/lib64/libApsFaceBeautyPreviewProductJni.so:system_ext/lib64/libApsFaceBeautyPreviewProductJni.so;FIX_SONAME
 my_product/lib64/libFileExtender-jni.so:system_ext/lib64/libFileExtender-jni.so
 my_product/lib64/libOplusBlurPreviewJNI.so:system_ext/lib64/libOplusBlurPreviewJNI.so
-my_product/lib64/libAncHumanDoubleExposure-jni.so:system_ext/lib64/libAncHumanDoubleExposure-jni.so
-my_product/lib64/libAPSClient-jni.so:system_ext/lib64/libAPSClient-jni.so
 my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so
+my_product/lib64/libsingle_camera_bokeh_native.so:system_ext/lib64/libsingle_camera_bokeh_native.so
 my_product/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so:system_ext/lib64/libsnpe_dsp_v66_domains_v2_skel.so;SYMLINK=system_ext/priv-app/OnePlusCamera/lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so
 my_product/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper.so:system/lib64/libCameraMDMHelper.so;SYMLINK=system/priv-app/OnePlusCameraService/lib/arm64/libCameraMDMHelper.so
 odm/bin/vl53l1_daemon_main
+odm/etc/camera/DAC_code.bin
 odm/etc/camera/calibrationCfg.xml
 odm/etc/camera/camera_engmode.xml
-odm/etc/camera/DAC_code.bin
 odm/etc/camera/distortionParams.bin
 odm/etc/camera/engineer_camera_config
 odm/etc/camera/fb_default
@@ -170,42 +170,16 @@ vendor/etc/camera/ashdr/ncf_pack.ncf
 vendor/etc/camera/ashdr/ncf_pack_imx471.ncf
 vendor/etc/camera/ashdr/ncf_pack_imx481.ncf
 vendor/etc/camera/ashdr/ncf_pack_imx586.ncf
-vendor/etc/camera/calibrationOutput_uw.bin
-vendor/etc/camera/calibrationOutput_wt.bin
 vendor/etc/camera/darksight/darksight_main.bin
 vendor/etc/camera/darksight/darksight_ultrawide.bin
+vendor/etc/camera/M_Attribute_AG_BMW_1.1.0.model.hardcode
+vendor/etc/camera/calibrationOutput_uw.bin
+vendor/etc/camera/calibrationOutput_wt.bin
 vendor/etc/camera/distortion_result.bin
 vendor/etc/camera/distortion_result_front.bin
-vendor/etc/camera/M_Attribute_AG_BMW_1.1.0.model.hardcode
 vendor/etc/init/vendor.oplus.hardware.cameraMDM@1.0-service.rc
 vendor/etc/vintf/manifest/manifest_oplus_cameramdm.xml
 vendor/lib/libc++_shared.so
-vendor/lib64/camera/com.qti.eeprom.truly_cmb433.so
-vendor/lib64/camera/com.qti.sensor.gc2375.so
-vendor/lib64/camera/com.qti.sensor.gc5035.so
-vendor/lib64/camera/com.qti.sensor.gc8054.so
-vendor/lib64/camera/com.qti.sensor.hi846.so
-vendor/lib64/camera/com.qti.sensor.imx586.so
-vendor/lib64/camera/com.qti.sensor.imx616.so
-vendor/lib64/camera/com.qti.sensor.ov02b10.so
-vendor/lib64/camera/com.qti.sensor.ov8856.so
-vendor/lib64/camera/com.qti.sensormodule.ofilm_gc8054.bin
-vendor/lib64/camera/com.qti.sensormodule.qtech_hi846.bin
-vendor/lib64/camera/com.qti.sensormodule.qtech_imx616.bin
-vendor/lib64/camera/com.qti.sensormodule.semco_imx586.bin
-vendor/lib64/camera/com.qti.sensormodule.shine_gc2375.bin
-vendor/lib64/camera/com.qti.sensormodule.shine_gc5035.bin
-vendor/lib64/camera/com.qti.sensormodule.shine_gc5035_t0.bin
-vendor/lib64/camera/com.qti.sensormodule.shine_ov02b10.bin
-vendor/lib64/camera/com.qti.sensormodule.sunny_ov8856.bin
-vendor/lib64/camera/com.qti.tuned.ofilm_gc8054.bin
-vendor/lib64/camera/com.qti.tuned.qtech_hi846.bin
-vendor/lib64/camera/com.qti.tuned.qtech_imx616.bin
-vendor/lib64/camera/com.qti.tuned.semco_imx586.bin
-vendor/lib64/camera/com.qti.tuned.shine_gc2375.bin
-vendor/lib64/camera/com.qti.tuned.shine_gc5035.bin
-vendor/lib64/camera/com.qti.tuned.shine_ov02b10.bin
-vendor/lib64/camera/com.qti.tuned.sunny_ov8856.bin
 vendor/lib64/camera/components/com.oneplus.node.memcpy.so
 vendor/lib64/camera/components/com.oneplus.node.preview.so
 vendor/lib64/camera/components/com.oneplus.node.rtb.so
@@ -246,10 +220,38 @@ vendor/lib64/camera/components/com.qtistatic.stats.af.so
 vendor/lib64/camera/components/com.qtistatic.stats.awb.so
 vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
+vendor/lib64/camera/com.qti.eeprom.truly_cmb433.so
+vendor/lib64/camera/com.qti.sensor.gc2375.so
+vendor/lib64/camera/com.qti.sensor.gc5035.so
+vendor/lib64/camera/com.qti.sensor.gc8054.so
+vendor/lib64/camera/com.qti.sensor.hi846.so
+vendor/lib64/camera/com.qti.sensor.imx586.so
+vendor/lib64/camera/com.qti.sensor.imx616.so
+vendor/lib64/camera/com.qti.sensor.ov02b10.so
+vendor/lib64/camera/com.qti.sensor.ov8856.so
+vendor/lib64/camera/com.qti.sensormodule.ofilm_gc8054.bin
+vendor/lib64/camera/com.qti.sensormodule.qtech_hi846.bin
+vendor/lib64/camera/com.qti.sensormodule.qtech_imx616.bin
+vendor/lib64/camera/com.qti.sensormodule.semco_imx586.bin
+vendor/lib64/camera/com.qti.sensormodule.shine_gc2375.bin
+vendor/lib64/camera/com.qti.sensormodule.shine_gc5035.bin
+vendor/lib64/camera/com.qti.sensormodule.shine_gc5035_t0.bin
+vendor/lib64/camera/com.qti.sensormodule.shine_ov02b10.bin
+vendor/lib64/camera/com.qti.sensormodule.sunny_ov8856.bin
+vendor/lib64/camera/com.qti.tuned.ofilm_gc8054.bin
+vendor/lib64/camera/com.qti.tuned.qtech_hi846.bin
+vendor/lib64/camera/com.qti.tuned.qtech_imx616.bin
+vendor/lib64/camera/com.qti.tuned.semco_imx586.bin
+vendor/lib64/camera/com.qti.tuned.shine_gc2375.bin
+vendor/lib64/camera/com.qti.tuned.shine_gc5035.bin
+vendor/lib64/camera/com.qti.tuned.shine_ov02b10.bin
+vendor/lib64/camera/com.qti.tuned.sunny_ov8856.bin
 vendor/lib64/camera/fdconfigpreview.bin
 vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
 vendor/lib64/camera/fdconfigvideolite.bin
+vendor/lib64/hw/camera.qcom.so
+vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/com.qti.feature2.anchorsync.so
 vendor/lib64/com.qti.feature2.demux.so
 vendor/lib64/com.qti.feature2.frameselect.so
@@ -265,11 +267,6 @@ vendor/lib64/com.qti.feature2.rt.so
 vendor/lib64/com.qti.feature2.serializer.so
 vendor/lib64/com.qti.feature2.stub.so
 vendor/lib64/com.qti.feature2.swmf.so
-vendor/lib64/hw/camera.qcom.so
-vendor/lib64/hw/com.qti.chi.override.so
-vendor/lib64/libcom.qti.chinodeutils.so
-vendor/lib64/lib_oneplus_transparenteffect.so
-vendor/lib64/lib_oneplus_watermark.so
 vendor/lib64/libAlgoProcess.so
 vendor/lib64/libFaceBeautyLiteCap.so
 vendor/lib64/libOPPO_Front_SCPortrait.so;FIX_SONAME
@@ -285,6 +282,8 @@ vendor/lib64/libVDBlurless.so
 vendor/lib64/libVDDualCameraBlurlessAPI.so
 vendor/lib64/libVDFusionBlurlessAPI_v2.so;FIX_SONAME
 vendor/lib64/libVDSuperPhotoAPI.so
+vendor/lib64/lib_oneplus_transparenteffect.so
+vendor/lib64/lib_oneplus_watermark.so
 vendor/lib64/libaps_frame_registration.so;DISABLE_CHECKELF
 vendor/lib64/libapsdarksight.so;FIX_SONAME
 vendor/lib64/libapsexif.so
@@ -325,6 +324,7 @@ vendor/lib64/libcamxstatscore.so
 vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 vendor/lib64/libchilog.so
+vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
 vendor/lib64/libcvp_common.so
 vendor/lib64/libcvpcpuRev_skel.so
@@ -384,6 +384,7 @@ vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
 vendor/etc/charger_fstab.qti
 
 # Charger firmware
+odm/firmware/fastchg/132700/oplus_vooc_fw_rt5125.bin
 odm/firmware/fastchg/19015/oplus_vooc_fw.bin
 odm/firmware/fastchg/19016/oplus_vooc_fw.bin
 odm/firmware/fastchg/19101/oplus_vooc_fw.bin
@@ -409,14 +410,11 @@ odm/firmware/fastchg/20251/oplus_vooc_fw_op10.bin
 odm/firmware/fastchg/20669/oplus_vooc_fw_rt5125.bin
 odm/firmware/fastchg/20801/oplus_vooc_fw.bin
 odm/firmware/fastchg/20804/oplus_vooc_fw.bin
-odm/firmware/fastchg/132700/oplus_vooc_fw_rt5125.bin
 
 # CNE
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_symlink
 vendor/bin/cnd
 vendor/bin/mutualex
-vendor/etc/cne/mwqem.conf
-vendor/etc/cne/profileMwqem.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
@@ -424,26 +422,28 @@ vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
+vendor/etc/cne/mwqem.conf
+vendor/etc/cne/profileMwqem.xml
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
 vendor/etc/init/cnd.rc
 vendor/etc/init/mutualex.rc
@@ -622,11 +622,11 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno)
-vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/libC2D2.so
 vendor/lib/libCB.so
@@ -638,11 +638,11 @@ vendor/lib/libgpudataproducer.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
-vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
@@ -656,13 +656,13 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 
 # Graphics (Adreno firmware)
-vendor/firmware/a650_gmu.bin
-vendor/firmware/a650_sqe.fw
 vendor/firmware/a620_zap.b00
 vendor/firmware/a620_zap.b01
 vendor/firmware/a620_zap.b02
 vendor/firmware/a620_zap.elf
 vendor/firmware/a620_zap.mdt
+vendor/firmware/a650_gmu.bin
+vendor/firmware/a650_sqe.fw
 
 # Graphics (Vulkan)
 vendor/lib/hw/vulkan.adreno.so
@@ -757,13 +757,13 @@ system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 system_ext/framework/oplus-ims-ext.jar
 system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libdiag_system.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
-system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor
 system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
@@ -835,9 +835,9 @@ vendor/firmware/lagoon_ipa_fws.elf
 vendor/firmware/lagoon_ipa_fws.mdt
 
 # Iris (Dependencies)
+vendor/lib64/libpwirisIoctlWrapper.so
 vendor/lib64/libpwirisfeature.so
 vendor/lib64/libpwirishalwrapper.so
-vendor/lib64/libpwirisIoctlWrapper.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.0.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.1.so
 vendor/lib64/vendor.pixelworks.hardware.feature@1.0.so
@@ -866,7 +866,7 @@ vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor
 
 # Media (Codec2) from OnePlus 8T (KB2005_14.0.0.603(EX01))
 vendor/bin/hw/vendor.qti.media.c2@1.0-service|c170ebc5a0416f609186639125132b87a5650ef8
-vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy|3c396a276dfb589501105e7158459fa2d644607e 
+vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy|3c396a276dfb589501105e7158459fa2d644607e
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy|a134d3d5d74294ca8164056b42389b1c7dbb2b65
 vendor/lib/libqcodec2_base.so|5bec0dec355c90d2a9739105b6d9810291ab9995
 vendor/lib/libqcodec2_basecodec.so|a517b6a89bf54d58c46758621c6dce9056cb92f7
@@ -1182,8 +1182,8 @@ vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/sns_wrist_pedo.json
 vendor/etc/sensors/config/stk3x5x_0.json
-vendor/etc/sensors/config/sx9324up_0.json
 vendor/etc/sensors/config/sx9324_0.json
+vendor/etc/sensors/config/sx9324up_0.json
 vendor/etc/sensors/config/sx932x_0.json
 vendor/etc/sensors/config/tcs3408.json
 vendor/etc/sensors/config/tcs3701.json
@@ -1227,8 +1227,8 @@ vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
 
 # Touchscreen firmware
-odm/firmware/tp/20801/FW_GT9886_SAMSUNG_FAE.img
 odm/firmware/tp/20801/FW_GT9886_SAMSUNG.img
+odm/firmware/tp/20801/FW_GT9886_SAMSUNG_FAE.img
 odm/firmware/tp/20801/LIMIT_GT9886_SAMSUNG.img
 
 # Trusted Execution Environment connector
@@ -1246,16 +1246,13 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Vibrator firmware
-odm/firmware/20ms_RTP.bin
-odm/firmware/40ms_RTP.bin
-odm/firmware/60ms_RTP.bin
-odm/firmware/80ms_RTP.bin
 odm/firmware/100ms_RTP.bin
 odm/firmware/120ms_RTP.bin
 odm/firmware/140ms_RTP.bin
 odm/firmware/160ms_RTP.bin
 odm/firmware/180ms_RTP.bin
 odm/firmware/200ms_RTP.bin
+odm/firmware/20ms_RTP.bin
 odm/firmware/220ms_RTP.bin
 odm/firmware/240ms_RTP.bin
 odm/firmware/260ms_RTP.bin
@@ -1266,11 +1263,26 @@ odm/firmware/340ms_RTP.bin
 odm/firmware/360ms_RTP.bin
 odm/firmware/380ms_RTP.bin
 odm/firmware/400ms_RTP.bin
+odm/firmware/40ms_RTP.bin
 odm/firmware/420ms_RTP.bin
 odm/firmware/440ms_RTP.bin
 odm/firmware/460ms_RTP.bin
 odm/firmware/480ms_RTP.bin
 odm/firmware/500ms_RTP.bin
+odm/firmware/60ms_RTP.bin
+odm/firmware/80ms_RTP.bin
+odm/firmware/AT500ms_RTP.bin
+odm/firmware/BoHaoPanAnJian.bin
+odm/firmware/BoHaoPanAnNiu.bin
+odm/firmware/BoHaoPanKuaiJie.bin
+odm/firmware/DianHuaGuaDuan.bin
+odm/firmware/DianJinMoShiQieHuan.bin
+odm/firmware/HuaDongTiaoZhenDong.bin
+odm/firmware/LeiShen.bin.bin
+odm/firmware/XuanZhongYouXi.bin
+odm/firmware/YeJianMoShiDaZi.bin
+odm/firmware/YouXiSheZhiKuang.bin
+odm/firmware/ZhuanYeMoShi.bin
 odm/firmware/agingtest_160hz_RTP.bin
 odm/firmware/agingtest_162hz_RTP.bin
 odm/firmware/agingtest_164hz_RTP.bin
@@ -1282,7 +1294,15 @@ odm/firmware/agingtest_174hz_RTP.bin
 odm/firmware/agingtest_176hz_RTP.bin
 odm/firmware/agingtest_178hz_RTP.bin
 odm/firmware/agingtest_180hz_RTP.bin
-odm/firmware/AT500ms_RTP.bin
+odm/firmware/aw8697_ALCloudscape_94_RTP_235Hz.bin
+odm/firmware/aw8697_ALGoodenergy_95_RTP_235Hz.bin
+odm/firmware/aw8697_Chase_RTP_263_234Hz.bin
+odm/firmware/aw8697_Climber_RTP_262_234Hz.bin
+odm/firmware/aw8697_NTblink_96_RTP_235Hz.bin
+odm/firmware/aw8697_NTwhoop_97_RTP_235Hz.bin
+odm/firmware/aw8697_Newfeeling_98_RTP_235Hz.bin
+odm/firmware/aw8697_VZW_Alrwave_RTP_200_234Hz.bin
+odm/firmware/aw8697_Version_Alert_RTP_231_234Hz.bin
 odm/firmware/aw8697_alarm_Alarm_clock_RTP_232_234Hz.bin
 odm/firmware/aw8697_alarm_Beep_RTP_233_234Hz.bin
 odm/firmware/aw8697_alarm_Breeze_RTP_234_234Hz.bin
@@ -1296,17 +1316,13 @@ odm/firmware/aw8697_alarm_Memory_RTP_241_234Hz.bin
 odm/firmware/aw8697_alarm_Relieved_RTP_242_234Hz.bin
 odm/firmware/aw8697_alarm_Ripple_RTP_243_234Hz.bin
 odm/firmware/aw8697_alarm_Slowly_RTP_244_234Hz.bin
-odm/firmware/aw8697_alarm_spring_RTP_245_234Hz.bin
 odm/firmware/aw8697_alarm_Stars_RTP_246_234Hz.bin
 odm/firmware/aw8697_alarm_Surging_RTP_247_234Hz.bin
-odm/firmware/aw8697_alarm_tactfully_RTP_248_234Hz.bin
 odm/firmware/aw8697_alarm_The_wind_RTP_249_234Hz.bin
 odm/firmware/aw8697_alarm_Walking_in_the_rain_RTP_250_234Hz.bin
-odm/firmware/aw8697_ALCloudscape_94_RTP_235Hz.bin
-odm/firmware/aw8697_ALGoodenergy_95_RTP_235Hz.bin
+odm/firmware/aw8697_alarm_spring_RTP_245_234Hz.bin
+odm/firmware/aw8697_alarm_tactfully_RTP_248_234Hz.bin
 odm/firmware/aw8697_aw8697_ringtone_Alacrity_RTP_171_234Hz.bin
-odm/firmware/aw8697_Chase_RTP_263_234Hz.bin
-odm/firmware/aw8697_Climber_RTP_262_234Hz.bin
 odm/firmware/aw8697_clock_channel_RTP_43_234Hz.bin
 odm/firmware/aw8697_cut_channel_RTP_42_234Hz.bin
 odm/firmware/aw8697_desk_7_RTP_54_234Hz.bin
@@ -1331,7 +1347,6 @@ odm/firmware/aw8697_kill_program_RTP_47_234Hz.bin
 odm/firmware/aw8697_listen_pop_53_235Hz.bin
 odm/firmware/aw8697_long_sound_channel_RTP_44_234Hz.bin
 odm/firmware/aw8697_nature_99_RTP_235Hz.bin
-odm/firmware/aw8697_Newfeeling_98_RTP_235Hz.bin
 odm/firmware/aw8697_notif_Allay_RTP_207_234Hz.bin
 odm/firmware/aw8697_notif_Allusion_RTP_208_234Hz.bin
 odm/firmware/aw8697_notif_Amiable_RTP_209_234Hz.bin
@@ -1356,8 +1371,6 @@ odm/firmware/aw8697_notif_Quickly_RTP_227_234Hz.bin
 odm/firmware/aw8697_notif_Rhythm_RTP_228_234Hz.bin
 odm/firmware/aw8697_notif_Surprise_RTP_229_234Hz.bin
 odm/firmware/aw8697_notif_Twinkle_RTP_230_234Hz.bin
-odm/firmware/aw8697_NTblink_96_RTP_235Hz.bin
-odm/firmware/aw8697_NTwhoop_97_RTP_235Hz.bin
 odm/firmware/aw8697_ring_Amenity_RTP_172_234Hz.bin
 odm/firmware/aw8697_ring_Bounce_RTP_174_234Hz.bin
 odm/firmware/aw8697_ring_Calm_RTP_175_234Hz.bin
@@ -1398,20 +1411,11 @@ odm/firmware/aw8697_short_channel_RTP_45_234Hz.bin
 odm/firmware/aw8697_shuntai24k_RTP_264_234Hz.bin
 odm/firmware/aw8697_t-jingle_RTP_201_234Hz.bin
 odm/firmware/aw8697_two_error_remaind_RTP_46_234Hz.bin
-odm/firmware/aw8697_Version_Alert_RTP_231_234Hz.bin
-odm/firmware/aw8697_VZW_Alrwave_RTP_200_234Hz.bin
 odm/firmware/aw8697_waltz_channel_RTP_41_234Hz.bin
 odm/firmware/aw8697_wentai24k_RTP_265_234Hz.bin
 odm/firmware/awinic.haptic.effect.so
 odm/firmware/awinic_haptic_gun_params.bin
 odm/firmware/awinic_haptic_params.bin
-odm/firmware/BoHaoPanAnJian.bin
-odm/firmware/BoHaoPanAnNiu.bin
-odm/firmware/BoHaoPanKuaiJie.bin
-odm/firmware/DianHuaGuaDuan.bin
-odm/firmware/DianJinMoShiQieHuan.bin
-odm/firmware/HuaDongTiaoZhenDong.bin
-odm/firmware/LeiShen.bin.bin
 odm/firmware/notif_Glint_RTP.bin
 odm/firmware/notif_Nord_SMS_RTP.bin
 odm/firmware/ring_Crimson_RTP.bin
@@ -1426,18 +1430,14 @@ odm/firmware/ringtone_Friendship.bin
 odm/firmware/ringtone_Jazz_life_RTP.bin
 odm/firmware/ringtone_OnePlus_tune_rhythm_RTP.bin
 odm/firmware/ringtone_Sun_glittering_RTP.bin
-odm/firmware/XuanZhongYouXi.bin
-odm/firmware/YeJianMoShiDaZi.bin
-odm/firmware/YouXiSheZhiKuang.bin
-odm/firmware/ZhuanYeMoShi.bin
 
 # VPP
 odm/lib/vendor.oplus.hardware.orms@1.0.so
 odm/lib64/vendor.oplus.hardware.orms@1.0.so
-vendor/etc/vintf/manifest/manifest_oplus_vpp.xml
 vendor/bin/vppservice
 vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vppservice.rc
+vendor/etc/vintf/manifest/manifest_oplus_vpp.xml
 vendor/lib/libvppclient.so
 vendor/lib/libvpphcp.so
 vendor/lib/libvpphvx.so
@@ -1487,6 +1487,7 @@ system_ext/bin/wfdservice64:system_ext/bin/wfdservice|34851904d02d11d3cfebbc7b87
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|6669d5ee462c981663b8ac573d84d334e4eed96c
 system_ext/etc/seccomp_policy/wfdservice64.policy|1e331272649395423b11c575892e0bdc9433b820
+system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|9513bbbd813dd05fb063d3c9e72640a1bc9156c2|f2918bbd8e4c691299e840863e8cb502a47bb773
 system_ext/lib64/libmmrtpdecoder.so|8b143c0b004a2f5ab8d7911dd463de0ceea794e7
 system_ext/lib64/libmmrtpencoder.so|eef3f64e6c2892fc0c87e176f5a83f7fe07761d3
 system_ext/lib64/libwfdavenhancements.so|8c968c6930e44901ef8c6abd6356f2308600d90e
@@ -1497,7 +1498,6 @@ system_ext/lib64/libwfddisplayconfig.so|27f5d6e284edf05cc7776e5be010912973000ab9
 system_ext/lib64/libwfdmminterface.so|8d3d493fef797aef2feaab4e09e50250ddf5dc9a
 system_ext/lib64/libwfdmmsink.so|4569ce9941eb5d06db599146ed80b8a32d7cd97f
 system_ext/lib64/libwfdmmsrc_system.so|0cc970954800566baddbf760b153b027940180f5
-system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|9513bbbd813dd05fb063d3c9e72640a1bc9156c2|f2918bbd8e4c691299e840863e8cb502a47bb773
 system_ext/lib64/libwfdrtsp.so|1ab4fc5b75d25f551df3593d5856e6f7893a4176
 system_ext/lib64/libwfdservice.so|af0e31f17ed997a5d8bad64cdad486be28cb9f07
 system_ext/lib64/libwfdsinksm.so|cc899b719fa11d844c65908d7fdc18600451324d
