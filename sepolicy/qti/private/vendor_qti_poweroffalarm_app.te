@@ -1,0 +1,1 @@
+dontaudit vendor_qti_poweroffalarm_app mnt_vendor_file:dir search;
